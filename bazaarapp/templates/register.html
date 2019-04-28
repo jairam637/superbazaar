@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+</head>
+<body>
+<form method="post" action="{%  url 'register'  %}">
+  {%  csrf_token %}
+  <table>
+    
+<td>username:</td><td> <input type="text" name="username"><br></td></tr>
+<tr><td>password:</td><td> <input type="text" name="password1"><br></td></tr>
+<tr><td>confirm:</td><td> <input type="text" name="password2"><br></td></tr>
+
+<tr><td>email:</td><td> <input type="email" name="email"><br></td></tr>
+<tr><td>fname: </td><td><input type="text" name="first_name"><br></td></tr>
+<tr><td>lname:</td><td> <input type="text" name="last_name"><br></td></tr>
+
+<tr><td>mobile:</td><td> <input type="text" name="mobile"><br></td></tr>
+<tr><td>address:</td><td><input type="text" name="address"><br></td></tr>
+<tr><td>state: </td><td><input type="text" name="state"><br></td></tr>
+
+<tr><td>pincode: </td><td><input type="text" name="pincode"><br></td></tr>
+<tr><td>country: </td><td><input type="text" name="country"><br></td></tr>
+</table>
+  {%  if form.errors %}
+<p>eror</p>
+{%  endif %}
+
+<input type="submit" value="register">
+
+</form>
+</body>
+</html>

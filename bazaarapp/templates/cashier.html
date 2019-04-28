@@ -1,0 +1,418 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cashier Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.muicss.com/mui-0.9.38/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static "bootstrap-dropselect.css" %}"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="{%static 'images/logo.png'%}" width="200" height="50" class="d-inline-block align-top" alt="Logo">
+        </a>
+        <div class="nav-profile-ico">
+            <div class="notification" style="display:inline-block;"></div>
+            <div class="messages" style="display:inline-block;"></div>
+            <div class="profile-name-menu" style="display:inline-block;">
+                <img src="{%static 'images/profile.png'%}" width="50" height="50" id="profile-image" alt="Avatar">
+            </div>
+        </div>
+    </nav>
+    <div class="profile-menus deactive">
+        <div class="widgets_div" id="myprofile">
+            <div class="icon_div ">
+                <span>
+                    <i class="fa fa-user"></i>
+                </span>
+            </div>
+            <div class="text_div ">
+                <span>My Profile</span>
+            </div>
+        </div>
+        <div class="widgets_div" id="profilesettings">
+            <div class="icon_div ">
+                <span>
+                    <i class="fa fa-cog"></i>
+                </span>
+            </div>
+            <div class="text_div ">
+                <span>Settings</span>
+            </div>
+        </div>
+        <div class="widgets_div">
+            <div class="icon_div ">
+                <span>
+                    <i class="fa fa-sign-out "></i>
+                </span>
+            </div>
+
+            {% if request.user %}
+            <a href="{% url 'log_out' %}">
+                <div class="text_div ">
+                    <span>Sign out </span>
+                </div>
+            </a>
+            {% endif%}
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4 col-sm-4 col-md-4 col-lg-3 sidebar">
+                <div class="side-menu ">
+                    <div class="widgets_div  invoicemenu ">
+                        <div class="icon_div ">
+                            <span>
+                                <i class="fa fa-file-text "></i>
+                            </span>
+                        </div>
+                        <div class="text_div ">
+                            <span>Invoice</span>
+                        </div>
+                    </div>
+                    <div class="widgets_div dashboard addcustomermenu">
+                        <div class="icon_div ">
+                            <span>
+                                <i class="fa fa-user-plus"></i>
+                            </span>
+                        </div>
+                        <div class="text_div ">
+                            <span> Add customers</span>
+                        </div>
+                    </div>
+                    <div class="widgets_div dashboard analyticsmenu">
+
+                        <div class="icon_div ">
+                            <span>
+                                <i class="fa fa-line-chart "></i>
+                            </span>
+                        </div>
+                        <div class="text_div">
+                            <span>Analytics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="widgets_div dashboard myactivitymenu">
+                    <div class="icon_div ">
+                        <span>
+                            <i class="fa fa-briefcase"></i>
+                        </span>
+                    </div>
+                    <div class="text_div ">
+                        <span>My Activity</span>
+                    </div>
+                </div>
+                <div class="widgets_div dashboard transactionmenu">
+                    <div class="icon_div ">
+                        <span>
+                            <i class="fa fa-money "></i>
+                        </span>
+                    </div>
+                    <div class="text_div ">
+                        <span>Transaction</span>
+                    </div>
+                </div>
+                <div class="widgets_div dashboard helpmenu ">
+                    <div class="icon_div ">
+                        <span>
+                            <i class="fa fa-info-circle "></i>
+                        </span>
+                    </div>
+                    <div class="text_div ">
+                        <span>Help</span>
+                    </div>
+                    <div class="help-info ">
+                        <p>Check here for help related for billing system</p>
+                    </div>
+                </div>
+            </div>
+            <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 addcustomerview deactive">
+                <div class="card customerform">
+                    <div class="card-body">
+                        <div class="row ">
+                            <div class="col-md-4 col-sm-4">
+                                <div class="mui-textfield">
+                                    <input type="text" id="username" placeholder="Enter Username">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-4 col-sm-4">
+                                <div class="mui-textfield">
+                                    <input type="text" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <div class="mui-textfield">
+                                    <input type="text" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="mui-textfield">
+                                    <input type="tel" placeholder="Enter 10 digit mobile number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8">
+                                <div class="mui-textfield">
+                                    <input type="email" placeholder="Enter email address.">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="mui-textfield">
+                                    <input type="date" value="Enter Birth Date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="mui-textfield">
+                                    <input type="password" id="password" placeholder="Enter password.">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="mui-textfield">
+                                    <input type="password" id="confirmpassword" placeholder="Confirm password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="mui-textfield">
+                                    <textarea placeholder="Enter Address Here."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="mui-textfield">
+                                    <input type="text" placeholder="Enter City Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="mui-textfield">
+                                    <input type="text" placeholder="Enter pin code">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="mui-btn mui-btn--raised">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 invoiceview">
+                <div class="card customerform">
+                    <div class="card-body">
+                        <div class="row ">
+                            <div class="col-md-3 col-sm-3">
+                                <form action="bazaarapp/brands/" method="get" id="cat-form">
+                                    <div class="">
+                                        <input list="browsers1" size="13%" class="inpclass catagory" placeholder="catagory" id="cat-input-field">
+                                        <datalist id="browsers1" class="catagory_datalist">
+
+                                        </datalist>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <div class="">
+                                    <form action="nothing.asp" method="get" id="brand-form">
+
+                                        <input list="browsers2" size="13%" class="inpclass" placeholder="brand" id="brand-input-field" autocomplete="off">
+                                        <datalist id="browsers2" class="brand_datalist">
+                                        </datalist>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <div class="">
+                                    <form action="nothing.asp" method="get" id="item-form">
+
+                                        <input list="browsers3" size="13%" class="inpclass " placeholder="item" id="item-input-field" autocomplete="off">
+                                        <datalist id="browsers3" class="item_datalist">
+                                        </datalist>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3 col-sm-3 inp">
+                                <input type="text" size="13%" class="inpclass number" placeholder="no of items.." id="number-input-field" autocomplete="off">
+                            </div>
+                            <br>
+                            <div class="col-md-12 col-sm-12 amountdiv">
+                                <span>Amount : </span>
+                                <span id="amount">0.00</span>
+                            </div>
+                            <div class="col-md-8 col-sm-8 "></div>
+                            <div class="col-md-4 col-sm-4 ">
+                                <button class="mui-btn mui-btn--raised mui-btn--primary" type="button" onclick="add()">add</button>
+                                <button class="mui-btn mui-btn--raised mui-btn--danger reset" type="button">reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card customerform">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12  justscroll">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>catagory</th>
+                                            <th>brand</th>
+                                            <th>item</th>
+                                            <th>no of items</th>
+                                            <th>amount</th>
+                                            <th>close</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tablebody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="cashier-item-submit">
+                    <button class="mui-btn mui-btn--raised " onclick="get_bill_data()" data-toggle="modal" data-target="#myModal">Generate</button>
+                    <button class="mui-btn mui-btn--raised mui-btn--danger cancel">Cancel</button>
+                </div>
+                <div class="container">
+                    <div class="modal fade" id="myModal">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content text-center">
+
+                                <!-- Modal Header -->
+                                <div id="printableArea">
+                                    <div class="m-2">
+
+
+                                        <span class="modal-title title">SUPER BAZAAR</span>
+                                        <br>
+                                        <span class="address text-center"># 413 2ND CROSS JPNAGAR 4TH PHASE BANGALORE - 54 </span>
+                                        <br>
+                                        <span class="address">PH NO: 080-208065</span>
+                                        <hr style="border-top: dotted 1px;" />
+                                        <div class="closearea">
+                                            <h4 class="bill">BILL NO :</h4>
+                                            <h4 class="date">DATE :</h4>
+                                        </div>
+                                    </div>
+                                    <div class="closearea">
+                                        <!-- Modal body -->
+                                        <div class="m-2 billtableforcss">
+                                            <table class="billtable col-lg-12" id="billtable1">
+
+                                                <tr>
+                                                    <th>Particulars</th>
+                                                    <th>Qty</th>
+                                                    <th>Rate</th>
+                                                    <th>Amount</th>
+                                                </tr>
+
+                                            </table>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="close" id="close_bill" class="mui-btn mui-btn--raised" data-dismiss="modal">Close</button>
+                                    <button type="submit" onclick="printDiv('printableArea')" class="mui-btn mui-btn--raised">Print</button>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 analyticsview deactive">
+                    Analytics Page
+                </div>
+                <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 myactivityview deactive">
+                    My Activity Page
+                </div>
+                <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 transactionview deactive">
+                    Transaction Page
+                </div>
+                <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 helpview deactive">
+                    Help Page
+                </div>
+                <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 myprofileview deactive">
+                    My Profile Page
+                </div>
+                <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 mysettingview deactive">
+                    My setting Page
+                </div>
+
+            </div>
+
+        </div>
+
+        <template id="dropdown_cat">
+            <option value={data} class="cata"> </option>
+            <!--<input name="submit" type="submit" onclick="getbrand( 'footwear')">-->
+        </template>
+
+        <template id="dropdown_brand">
+            <option value={data} class="brand"></option>
+        </template>
+
+        <template id="dropdown_item">
+            <option value={data} class="item"></option>
+        </template>
+        <template id="table_row">
+            <tr class="{data}"></tr>
+        </template>
+
+        <template id="table_data">
+            <td class="table_item">{data}</td>
+        </template>
+        <template id="close">
+            <td>
+                <button type="button" class="mui-btn mui-btn--raised mui-btn--danger" id="">
+            </td>
+        </template>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.muicss.com/mui-0.9.38/js/mui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src='{% static "rest_framework/js/csrf.js" %}'></script>
+        <script src="{% static 'js/cashier.js' %}">
+        </script>
+</body>
+
+</html>

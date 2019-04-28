@@ -1,0 +1,85 @@
+item_id,name,category,brand,price
+1,Boat shoe,footwear,Bata,6999
+2,Climbing shoe,footwear,Bata,5999
+3,Loafers x,footwear,Bata,1999
+4,Kitten heel,footwear,Bata,499
+5,Bucks,footwear,Bata,599
+6,Court shoe,footwear,Bata,999
+7,Dori shoes,footwear,Bata,699
+8,Boat shoe,footwear,Reebok,9999
+9,Climbing shoe,footwear,Reebok,4999
+10,Loafers x,footwear,Reebok,1099
+11,Kitten heel,footwear,Reebok,1299
+12,Bucks,footwear,Reebok,1399
+13,Court shoe,footwear,Reebok,1199
+14,Dori shoes,footwear,Reebok,299
+15,Fashion boot,footwear,Reebok,499
+16,Boat shoe,footwear,Adidas,3599
+17,Climbing shoe,footwear,Adidas,5199
+18,Loafers x,footwear,Adidas,1099
+19,Kitten heel,footwear,Adidas,1219
+20,Bucks,footwear,Adidas,1099
+21,Court shoe,footwear,Adidas,999
+22,Dori shoes,footwear,Adidas,799
+23,Fashion boot,footwear,Adidas,399
+24,Driving moccasins,footwear,Adidas,299
+25,Black tank,clothes,texus,200
+26,short sleeved white t-shirt,clothes,texus,400
+27,short sleeved black t-shirt,clothes,texus,499
+28,long sleeved white tshirt,clothes,texus,399
+29,black turtleneck,clothes,texus,599
+30,crisp white blouse,clothes,texus,799
+31,A black dress,clothes,texus,1200
+32,Pencil skirt,clothes,texus,1299
+33,Jeans,clothes,texus,1399
+34,Black pants,clothes,texus,1199
+35,Skinny Jeans,clothes,texus,1399
+36,Khaki pants,clothes,texus,1499
+37,Cropped Jacket,clothes,texus,2399
+38,Black cashmere wrap,clothes,texus,1299
+39,Denim jacket,clothes,texus,799
+40,Basic Black pumps,clothes,texus,699
+41,Metallic evening shoes,clothes,texus,599
+42,cotton waffle robe,clothes,texus,1200
+43,The tuxedo shirt,clothes,texus,1200
+44,Fleece vest,clothes,texus,1239
+45,khaki trench,clothes,texus,1459
+46,leather balzer,clothes,texus,1999
+47,Peacoat,clothes,texus,2999
+48,Flat boots,clothes,texus,1099
+49,Heavy sweater,clothes,texus,3999
+50,Pant suit,clothes,texus,4999
+51,Apple Juice,Beverages,texus,30
+52,Coffee,Beverages,Bru,40
+53,Milk,Beverages,Nandini,30
+54,Milk,Beverages,Arokya,40
+55,Cofee,Beverages,Good life,30
+56,Cofee,Beverages,Nescafe,90
+57,Cofee,Beverages,Moccana,80
+58,Cool Drinks,Beverages,Pepsi,50
+59,Cool Drinks,Beverages,Coca-Cola,40
+60,Cool Drinks,Beverages,Sprite,40
+61,Cool Drinks,Beverages,Diet Pepsi,40
+62,Cool Drinks,Beverages,Mountain Dew,40
+63,Cool Drinks,Beverages,Mirinda,40
+64,Tea,Beverages,Lipton,30
+65,Tea,Beverages,Tetley,35
+66,Tea,Beverages,Pataka,25
+67,Tea,Beverages,Brooke Bond Red Label,26
+68,Tea,Beverages,Red Label,55
+69,Tea,Beverages,Tata Tea,65
+70,Tea,Beverages,Society Tea,75
+71,Tea,Beverages,Taj Mahal,80
+72,Apple Sauce,Canned & Packaged Foods,Aachi,50
+73,Barbeque Sauce,Canned & Packaged Foods,Sakthi,49
+74,Bread Crumbs,Canned & Packaged Foods,Sakthi,30
+75,Cheery Pie Filling,Canned & Packaged Foods,Aachi,80
+76,"Chicken Noodle Soup, condensed",Canned & Packaged Foods,Aachi,100
+77,"Chicken Noodle Soup, regular",Canned & Packaged Foods,Sakthi,90
+78,Chips,Canned & Packaged Foods,Lays,10
+79,Chips red,Canned & Packaged Foods,Lays,10
+80,Chips blue,Canned & Packaged Foods,Lays,10
+81,Honey,Canned & Packaged Foods,Honey,10
+82,Pasta,Canned & Packaged Foods,Pasta,10
+83,Noodles,Canned & Packaged Foods,Maggi,20
+84,Noodles,Canned & Packaged Foods,Yepee,20

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Register</title>
+</head>
+<body>
+<form method="post" action="{%  url 'register'  %}">
+   {%  csrf_token %}
+username: <input type="text" name="username"><br>
+password: <input type="text" name="password1"><br>
+confirm: <input type="text" name="password2"><br>
+
+email: <input type="email" name="email"><br>
+fname: <input type="text" name="first_name"><br>
+lname: <input type="text" name="last_name"><br>
+
+mobile: <input type="text" name="mobile"><br>
+address: <input type="text" name="address"><br>
+state: <input type="text" name="state"><br>
+
+pincode: <input type="text" name="pincode"><br>
+country: <input type="text" name="country"><br>
+
+   {%  if form.errors %}
+<p>eror</p>
+{%  endif %}
+
+<input type="submit" value="register">
+
+</form>
+</body>
+</html>

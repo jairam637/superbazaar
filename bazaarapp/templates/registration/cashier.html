@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cashier Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.muicss.com/mui-0.9.38/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.muicss.com/mui-0.9.38/js/mui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="logo.png" width="200" height="50" class="d-inline-block align-top" alt="Logo">
+        </a>
+        <div class="nav-profile-ico">
+            <div class="notification" style="display:inline-block;"></div>
+            <div class="messages" style="display:inline-block;"></div>
+            <div class="profile-name-menu" style="display:inline-block;">
+                <img src="profile1.png" width="50" height="50" id="profile-image" alt="Avatar">
+            </div>
+        </div>
+    </nav>
+    <div class="profile-menus deactive">
+        <div class="widgets_div">
+            <div class="icon_div ">
+                <span>
+                    <i class="fa fa-user"></i>
+                </span>
+            </div>
+            <div class="text_div ">
+                <span>My Profile</span>
+            </div>
+        </div>
+        <div class="widgets_div">
+            <div class="icon_div ">
+                <span>
+                    <i class="fa fa-cog"></i>
+                </span>
+            </div>
+            <div class="text_div ">
+                <span>Settings</span>
+            </div>
+        </div>
+        <div class="widgets_div">
+            <div class="icon_div ">
+                <span>
+                    <i class="fa fa-sign-out "></i>
+                </span>
+            </div>
+            <div class="text_div ">
+                <span>Sign out </span>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4 col-sm-4 col-md-4 col-lg-3 sidebar">
+                <div class="side-menu ">
+                    <div class="widgets_div dashboard invoicemenu ">
+                        <div class="icon_div ">
+                            <span>
+                                <i class="fa fa-file-text "></i>
+                            </span>
+                        </div>
+                        <div class="text_div ">
+                            <span>Invoice</span>
+                        </div>
+                    </div>
+                    <div class="widgets_div dashboard addcustomermenu">
+                        <div class="icon_div ">
+                            <span>
+                                <i class="fa fa-user-plus"></i>
+                            </span>
+                        </div>
+                        <span> Add customers</span>
+                    </div>
+                    <div class="widgets_div dashboard analyticsmenu">
+
+                        <div class="icon_div ">
+                            <span>
+                                <i class="fa fa-line-chart "></i>
+                            </span>
+                        </div>
+                        <span>Analytics</span>
+                    </div>
+                </div>
+                <div class="widgets_div dashboard myactivitymenu">
+                    <div class="icon_div ">
+                        <span>
+                            <i class="fa fa-briefcase"></i>
+                        </span>
+                    </div>
+                    <div class="text_div ">
+                        <span>My Activity</span>
+                    </div>
+                </div>
+                <div class="widgets_div dashboard transactionmenu">
+                    <div class="icon_div ">
+                        <span>
+                            <i class="fa fa-money "></i>
+                        </span>
+                    </div>
+                    <div class="text_div ">
+                        <span>Transaction</span>
+                    </div>
+                </div>
+                <div class="widgets_div dashboard settingsmenu">
+                    <div class="icon_div ">
+                        <span>
+                            <i class="fa fa-cog "></i>
+                        </span>
+                    </div>
+                    <div class="text_div ">
+                        <span>Settings</span>
+                    </div>
+                </div>
+                <div class="widgets_div dashboard helpmenu ">
+                    <div class="icon_div ">
+                        <span>
+                            <i class="fa fa-info-circle "></i>
+                        </span>
+                    </div>
+                    <div class="text_div ">
+                        <span>Help</span>
+                    </div>
+                    <div class="help-info ">
+                        <p>Check here for help related for billing system</p>
+                    </div>
+                </div>
+            </div>
+            <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 addcustomerview deactive">
+                <div class="card customerform">
+                    <div class="card-body">
+                        <div class="row ">
+                            <div class="col-md-4 col-sm-4">
+                                <div class="mui-textfield">
+                                    <input type="text" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4">
+                                <div class="mui-textfield">
+                                    <input type="text" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="mui-textfield">
+                                    <input type="tel" placeholder="Enter 10 digit mobile number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8">
+                                <div class="mui-textfield">
+                                    <input type="email" placeholder="Enter email address.">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="mui-textfield">
+                                    <input type="date" placeholder="Enter Date" value="Enter Birth Date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="mui-textfield">
+                                    <input type="password" placeholder="Enter password.">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="mui-textfield">
+                                    <input type="password" placeholder="Confirm password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="mui-textfield">
+                                    <textarea placeholder="Enter Address Here."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="mui-textfield">
+                                    <input type="text" placeholder="Enter City Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="mui-textfield">
+                                    <input type="text" placeholder="Enter pin code">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" class="mui-btn mui-btn--raised">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 invoiceview deactive">
+
+            </div>
+            <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 analyticsview deactive">
+                Analytics Page
+            </div>
+            <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 myactivityview deactive">
+                My Activity Page
+            </div>
+            <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 transactionview deactive">
+                Transaction Page
+            </div>
+            <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 settingsview deactive">
+                Settings Page
+            </div>
+            <div class="viewlist col-8 col-sm-8 col-md-8 col-lg-9 helpview deactive">
+                Help Page
+            </div>
+
+
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
